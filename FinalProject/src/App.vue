@@ -1,23 +1,95 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import Home from './components/Home.vue';
+import Navigation from './components/Navigation.vue';
+
+export default {
+  components: {
+    Home,
+    Navigation
+  }
+};
 </script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <Navigation />
+    
+    <router-view></router-view>
+  </div>
 </template>
 
-<style scoped>
+
+
+<style>
+
+body {
+  padding-top: 60px;
+
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navbar-item {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-right: 20px; 
+}
+
+.logo {
+  flex: 0 1 auto; 
+}
+
+.search-container {
+  flex: 0 1 auto; 
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 300px; 
+}
+
+.search-button {
+  padding: 5px 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #777;
+}
+
+.cart-profile {
+  flex: 0 1 auto; 
+}
+
+
 header {
   line-height: 1.5;
 }
